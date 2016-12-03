@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export LAUNCHER="io.vertx.core.Launcher"
-export VERTICLE="fi.metacity.julukisilla.MainVerticle"
+export VERTICLE="fi.metacity.koodistopalvelung.MainVerticle"
 export CMD="mvn compile"
 export VERTX_CMD="run"
 

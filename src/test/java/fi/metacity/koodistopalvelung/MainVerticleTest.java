@@ -1,4 +1,4 @@
-package fi.metacity.julukisilla;
+package fi.metacity.koodistopalvelung;
 
 import io.vertx.core.Vertx;
 import io.vertx.ext.unit.Async;
@@ -28,10 +28,10 @@ public class MainVerticleTest {
 	@Test
 	public void testThatTheServerIsStarted(TestContext tc) {
 		Async async = tc.async();
-		vertx.createHttpClient().getNow(8080, "localhost", "/api/v1/areas", response -> {
+		vertx.createHttpClient().getNow(8080, "localhost", "/api/v1/code_systems", response -> {
 			tc.assertEquals(response.statusCode(), 200);
 			response.bodyHandler(body -> {
-				tc.assertTrue(body.toString().contains("KUOPIO"));
+				tc.assertTrue(body.toString().contains("STH1"));
 				async.complete();
 			});
 		});
